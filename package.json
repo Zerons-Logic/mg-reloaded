@@ -1,7 +1,7 @@
 {
   "name": "mg-reloaded",
   "version": "1.0.0",
-  "description": "",
+  "description": "Does something magical!",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/miknonny/mg-reloaded/issues"
   },
-  "homepage": "https://github.com/miknonny/mg-reloaded#readme"
+  "homepage": "https://github.com/miknonny/mg-reloaded#readme",
+  "dependencies": {
+    "async": "2.0.1",
+    "faker": "3.1.0",
+    "mailgun-js": "0.7.12"
+  },
+  "devDependencies": {
+    "babel-eslint": "6.1.2"
+  }
 }
