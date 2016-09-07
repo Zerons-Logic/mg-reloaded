@@ -12,11 +12,17 @@ const sendDelay = config.sendDelay
 console.log(config.sendDelay)
 // console.log(mailingList)
 const messageData = config.messageData
-messageData.to = mailingList.address
 
 const mg = mailgun({apiKey, domain})
 
 const membersList = fs.readFileSync('mails.txt').toString().replace(/\r\n/g,'\n').split('\n')
+const textMessage = fs.readFileSync('templates/message.txt').toString()
+const htmlMessage = fs.readFileSync('templates/message.html').toString()
+messageData.text = textMessage
+messageData.html = htmlMessage
+
+//Configure sending message at a later time.
+// messageData["o:deliverytime"] = config.deliverytime || ""
 
 const members = membersList.map((mail, i) => {
    return {
@@ -36,6 +42,7 @@ function* memberSubset () {
 const createMailingList = () => {
   return new Promise((resolve, reject) => {
     mailingList.address = `${uuid.v4()}@${domain}`
+    messageData.to = mailingList.address
     mg.lists().create(mailingList, (err, body) => {
       if (err) return reject(err)
       return resolve(body)
@@ -63,24 +70,20 @@ const mgJobID = setInterval(() => {
       })
     })
     // Send message to mailing list.
-    // .then(() => {
-    //   mg.messages().send(messageData, (err, body) => {
-    //     if (err) return console.log(err)
-    //     console.log(body)
-    //   })
-    // })
+    .then(() => {
+      mg.messages().send(messageData, (err, body) => {
+        if (err) return console.log(err)
+        console.log(body)
+      })
+    })
     .catch(err => {
       console.log(err)
     })
 }, sendDelay)
 
 /**
- * Call generator with next
- * set interval
- * add recipient variable.
- * work on unsubscribe.
- * send at a later time in future
- *
+ * template
+ * clean up code.
  */
 
 
