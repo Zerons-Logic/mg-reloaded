@@ -1,0 +1,29 @@
+{
+  "name": "mg-reloaded",
+  "version": "1.0.0",
+  "description": "Does something magical!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miknonny/mg-reloaded.git"
+  },
+  "author": "mbah michael <miknonny@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/miknonny/mg-reloaded/issues"
+  },
+  "homepage": "https://github.com/miknonny/mg-reloaded#readme",
+  "dependencies": {
+    "async": "2.0.1",
+    "faker": "3.1.0",
+    "mailgun-js": "0.7.12",
+    "node-uuid": "1.4.7"
+  },
+  "devDependencies": {
+    "babel-eslint": "6.1.2",
+    "eslint": "3.4.0"
+  }
+}

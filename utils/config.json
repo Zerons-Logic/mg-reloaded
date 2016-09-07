@@ -1,0 +1,17 @@
+{
+  "domain": "sandboxe2ac7c9a3d4c4a089ad769e495958d36.mailgun.org",
+  "apiKey": "key-5964139b9799faab1bf0ae17ba821f09",
+  "mailingList": {
+    "name": "MailgunDev",
+    "description": "mg-reloaded test development"
+  },
+  "messageData": {
+    "from": "dev@sandboxe2ac7c9a3d4c4a089ad769e495958d36.mailgun.org",
+    "subject": "it works as you can see",
+    "text": "It works as you can see %recipient_name% %mailing_list_unsubscribe_url%",
+    "html": "<html>shit goes here</html>"
+  },
+  "deliveryTime": "Thu, 13 Oct 2011 18:02:00 GMT"
+  "batchSize": 10,
+  "sendDelay": 5000
+}
