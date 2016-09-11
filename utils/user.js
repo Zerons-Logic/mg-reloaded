@@ -9,13 +9,13 @@ const apiKey = config.apiKey
 const batchSize = config.batchSize
 const mailingList = config.mailingList
 const sendDelay = config.sendDelay
-console.log(config.sendDelay)
+// console.log(config.sendDelay)
 // console.log(mailingList)
 const messageData = config.messageData
 
 const mg = mailgun({apiKey, domain})
 
-const membersList = fs.readFileSync('mails.txt').toString().replace(/\r\n/g,'\n').split('\n')
+const membersList = fs.readFileSync('mails/mails.txt').toString().replace(/\r\n/g,'\n').split('\n')
 const textMessage = fs.readFileSync('templates/message.txt').toString()
 const htmlMessage = fs.readFileSync('templates/message.html').toString()
 messageData.text = textMessage
